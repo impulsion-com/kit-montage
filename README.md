@@ -19,7 +19,7 @@ Le plus simple : ouvre Claude Code et demande-lui
 - Un Mac (c'est la seule plateforme testée).
 - [Claude Code](https://claude.com/claude-code), connecté à ton abonnement Claude.
 - [Homebrew](https://brew.sh), pour que le script installe ce qui manque (ffmpeg, Node.js, Python).
-- Environ 8 Go libres : les bibliothèques de transcription sont lourdes.
+- Environ 5 Go libres : les bibliothèques et les modèles de transcription sont lourds.
 
 ### Les étapes
 
@@ -29,7 +29,7 @@ git clone https://github.com/impulsion-com/kit-montage.git ~/kit-montage
 ```
 
 Le script vérifie les outils, installe le moteur, télécharge la banque de sons, branche la
-skill `montage-reel` dans Claude Code et termine par un contrôle. Compte 10 à 15 minutes la
+skill `montage-reel` dans Claude Code et termine par un contrôle. Compte 5 à 15 minutes selon ta connexion la
 première fois. Tu peux le relancer sans risque : il saute ce qui est déjà fait.
 
 ## Utilisation
