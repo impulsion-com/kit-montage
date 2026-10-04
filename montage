@@ -13,7 +13,7 @@ if [ ! -x "$PY" ]; then
 fi
 export PYTHONPATH="$KIT/moteur${PYTHONPATH:+:$PYTHONPATH}"
 if [ "${1:-}" = "--verifier" ]; then
-  "$PY" -c "import whisperx, cv2, numpy, PIL; print('python : ok')"
+  "$PY" -c "import whisperx, cv2, numpy, PIL; cv2.CascadeClassifier; print('python : ok')"
   (cd "$KIT/moteur" && node --input-type=module -e "await import('@remotion/renderer'); await import('@remotion/bundler'); console.log('remotion : ok')")
   ffmpeg -version | head -1
   [ -x "$KIT/moteur/personmask" ] && echo "détourage : ok" || echo "détourage : absent (b-roll derrière la personne indisponible)"

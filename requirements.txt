@@ -1,7 +1,8 @@
 # Dépendances Python du planificateur (moteur/plan.py, moteur/engine.py).
 # whisperx tire torch, faster-whisper et les modèles d'alignement.
 whisperx==3.8.6
-opencv-python-headless>=4.10
+# OpenCV 5 a retiré le détecteur de visage en cascade utilisé par engine.py
+opencv-python-headless>=4.10,<5
 pillow>=10
 numpy>=2
 certifi
