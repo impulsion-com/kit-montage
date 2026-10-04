@@ -1,0 +1,28 @@
+#!/bin/bash
+# Lanceur du kit : exécute un build.py de projet avec le Python du kit.
+#   montage build.py plan        cartes, coupes et sons, sans rendre
+#   montage build.py still 2400  une image à 2,4 s
+#   montage build.py             rendu complet dans exports/
+#   montage --verifier           contrôle l'installation
+set -euo pipefail
+KIT="$(cd "$(dirname "$(readlink -f "$0" 2>/dev/null || echo "$0")")" && pwd)"
+PY="$KIT/moteur/.venv/bin/python"
+if [ ! -x "$PY" ]; then
+  echo "Kit non installé : lance d'abord $KIT/installer.sh" >&2
+  exit 1
+fi
+export PYTHONPATH="$KIT/moteur${PYTHONPATH:+:$PYTHONPATH}"
+if [ "${1:-}" = "--verifier" ]; then
+  "$PY" -c "import whisperx, cv2, numpy, PIL; print('python : ok')"
+  (cd "$KIT/moteur" && node --input-type=module -e "await import('@remotion/renderer'); await import('@remotion/bundler'); console.log('remotion : ok')")
+  ffmpeg -version | head -1
+  [ -x "$KIT/moteur/personmask" ] && echo "détourage : ok" || echo "détourage : absent (b-roll derrière la personne indisponible)"
+  exit 0
+fi
+if [ $# -lt 1 ]; then
+  sed -n '2,6p' "$0" | sed 's/^# \{0,1\}//'
+  exit 1
+fi
+SCRIPT="$1"; shift
+cd "$(dirname "$SCRIPT")"
+exec "$PY" "$(basename "$SCRIPT")" "$@"

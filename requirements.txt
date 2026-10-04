@@ -1,0 +1,7 @@
+# Dépendances Python du planificateur (moteur/plan.py, moteur/engine.py).
+# whisperx tire torch, faster-whisper et les modèles d'alignement.
+whisperx==3.8.6
+opencv-python-headless>=4.10
+pillow>=10
+numpy>=2
+certifi

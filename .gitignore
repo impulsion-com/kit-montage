@@ -1,0 +1,18 @@
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+
+# Médias de projet : chaque montage dépose son clip et son plan dans moteur/public/<slug>/
+moteur/public/*
+!moteur/public/fonts
+!moteur/public/sfx
+work/
+exports/
+
+# Banque de sons : téléchargée à la source par installer.sh (sa licence interdit de la redistribuer)
+moteur/sfx/*.mp3
+
+# Binaire compilé par installer.sh (source : moteur/personmask.swift)
+moteur/personmask

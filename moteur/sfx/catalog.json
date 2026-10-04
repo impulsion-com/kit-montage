@@ -1,0 +1,702 @@
+[
+{
+"name": "analog-shutter",
+"dur": 9.0,
+"peak": 5.59,
+"onset": 0.53,
+"peak_db": -21.7
+},
+{
+"name": "apple-pay-success",
+"dur": 1.54,
+"peak": 0.23,
+"onset": 0.09,
+"peak_db": -23.2
+},
+{
+"name": "button-pressed",
+"dur": 0.74,
+"peak": 0.09,
+"onset": 0.08,
+"peak_db": -19.9
+},
+{
+"name": "camera-1",
+"dur": 0.39,
+"peak": 0.24,
+"onset": 0.02,
+"peak_db": -16.3
+},
+{
+"name": "camera-2",
+"dur": 0.63,
+"peak": 0.09,
+"onset": 0.05,
+"peak_db": -27.2
+},
+{
+"name": "camera-3",
+"dur": 1.02,
+"peak": 0.46,
+"onset": 0.03,
+"peak_db": -17.9
+},
+{
+"name": "camera-4",
+"dur": 0.29,
+"peak": 0.07,
+"onset": 0.03,
+"peak_db": -29.0
+},
+{
+"name": "camera-5",
+"dur": 0.34,
+"peak": 0.12,
+"onset": 0.04,
+"peak_db": -26.3
+},
+{
+"name": "camera-6",
+"dur": 0.42,
+"peak": 0.16,
+"onset": 0.05,
+"peak_db": -18.0
+},
+{
+"name": "camera-focus-and-shutter",
+"dur": 7.7,
+"peak": 0.03,
+"onset": 0.01,
+"peak_db": -14.0
+},
+{
+"name": "chime",
+"dur": 1.59,
+"peak": 0.03,
+"onset": 0.02,
+"peak_db": -17.2
+},
+{
+"name": "cinematic-bang",
+"dur": 12.04,
+"peak": 2.58,
+"onset": 0.4,
+"peak_db": -6.7
+},
+{
+"name": "cinematic-boom",
+"dur": 2.78,
+"peak": 1.76,
+"onset": 0.02,
+"peak_db": -3.8
+},
+{
+"name": "cinematic-glass-hit",
+"dur": 5.46,
+"peak": 0.42,
+"onset": 0.17,
+"peak_db": -3.3
+},
+{
+"name": "cinematic-heavy-hit",
+"dur": 5.12,
+"peak": 0.55,
+"onset": 0.24,
+"peak_db": -2.1
+},
+{
+"name": "cinematic-reverse-1",
+"dur": 3.05,
+"peak": 3.01,
+"onset": 0.97,
+"peak_db": -7.7
+},
+{
+"name": "cinematic-reverse-10",
+"dur": 1.63,
+"peak": 1.57,
+"onset": 0.37,
+"peak_db": -17.1
+},
+{
+"name": "cinematic-reverse-11",
+"dur": 6.92,
+"peak": 6.57,
+"onset": 1.79,
+"peak_db": -11.7
+},
+{
+"name": "cinematic-reverse-2",
+"dur": 3.11,
+"peak": 1.27,
+"onset": 0.08,
+"peak_db": -13.3
+},
+{
+"name": "cinematic-reverse-3",
+"dur": 3.44,
+"peak": 3.29,
+"onset": 1.85,
+"peak_db": -10.0
+},
+{
+"name": "cinematic-reverse-4",
+"dur": 2.93,
+"peak": 2.67,
+"onset": 1.3,
+"peak_db": -8.7
+},
+{
+"name": "cinematic-reverse-5",
+"dur": 2.5,
+"peak": 2.32,
+"onset": 1.02,
+"peak_db": -8.6
+},
+{
+"name": "cinematic-reverse-6",
+"dur": 1.33,
+"peak": 1.18,
+"onset": 0.46,
+"peak_db": -10.6
+},
+{
+"name": "cinematic-reverse-7",
+"dur": 3.41,
+"peak": 3.18,
+"onset": 1.52,
+"peak_db": -9.1
+},
+{
+"name": "cinematic-reverse-8",
+"dur": 3.39,
+"peak": 3.05,
+"onset": 1.5,
+"peak_db": -7.1
+},
+{
+"name": "cinematic-reverse-9",
+"dur": 3.14,
+"peak": 2.31,
+"onset": 0.5,
+"peak_db": -6.7
+},
+{
+"name": "cinematic-riser-wildfire",
+"dur": 12.02,
+"peak": 6.22,
+"onset": 0.58,
+"peak_db": -9.8
+},
+{
+"name": "cinematic-whoosh-reverse",
+"dur": 5.85,
+"peak": 1.56,
+"onset": 0.42,
+"peak_db": -7.4
+},
+{
+"name": "click-button",
+"dur": 2.04,
+"peak": 0.14,
+"onset": 0.02,
+"peak_db": -27.6
+},
+{
+"name": "cyberpunk-stutter-riser",
+"dur": 7.01,
+"peak": 2.41,
+"onset": 1.64,
+"peak_db": -8.7
+},
+{
+"name": "deep-hit-2",
+"dur": 9.6,
+"peak": 0.13,
+"onset": 0.08,
+"peak_db": -7.6
+},
+{
+"name": "deep-hit-3",
+"dur": 5.14,
+"peak": 0.01,
+"onset": 0.01,
+"peak_db": -5.6
+},
+{
+"name": "deep-hit",
+"dur": 3.94,
+"peak": 0.14,
+"onset": 0.13,
+"peak_db": -8.9
+},
+{
+"name": "deep-whoosh-1",
+"dur": 3.16,
+"peak": 0.63,
+"onset": 0.31,
+"peak_db": -12.4
+},
+{
+"name": "deep-whoosh-2",
+"dur": 3.06,
+"peak": 0.58,
+"onset": 0.27,
+"peak_db": -11.1
+},
+{
+"name": "deep-whoosh-3",
+"dur": 3.18,
+"peak": 0.8,
+"onset": 0.47,
+"peak_db": -7.5
+},
+{
+"name": "deep-whoosh-4",
+"dur": 4.05,
+"peak": 0.87,
+"onset": 0.64,
+"peak_db": -5.2
+},
+{
+"name": "dramatic-buildup-1",
+"dur": 1.88,
+"peak": 1.55,
+"onset": 0.69,
+"peak_db": -13.1
+},
+{
+"name": "dramatic-buildup-2",
+"dur": 0.94,
+"peak": 0.62,
+"onset": 0.18,
+"peak_db": -13.8
+},
+{
+"name": "dramatic-buildup-3",
+"dur": 1.07,
+"peak": 0.9,
+"onset": 0.35,
+"peak_db": -10.4
+},
+{
+"name": "dramatic-buildup-4",
+"dur": 1.93,
+"peak": 1.83,
+"onset": 0.59,
+"peak_db": -15.1
+},
+{
+"name": "dramatic-buildup-reveal",
+"dur": 4.08,
+"peak": 0.53,
+"onset": 0.03,
+"peak_db": -10.1
+},
+{
+"name": "dramatic-buildup-sliced",
+"dur": 2.06,
+"peak": 1.8,
+"onset": 0.07,
+"peak_db": -10.2
+},
+{
+"name": "dramatic-buildup-whip-1",
+"dur": 1.85,
+"peak": 1.59,
+"onset": 0.47,
+"peak_db": -7.9
+},
+{
+"name": "dramatic-buildup-whip-2",
+"dur": 2.06,
+"peak": 1.88,
+"onset": 0.17,
+"peak_db": -15.0
+},
+{
+"name": "dramatic-buildup-whip-3",
+"dur": 0.94,
+"peak": 0.82,
+"onset": 0.28,
+"peak_db": -9.7
+},
+{
+"name": "dramatic-impact",
+"dur": 8.57,
+"peak": 1.61,
+"onset": 1.38,
+"peak_db": -13.4
+},
+{
+"name": "fast-whoosh",
+"dur": 0.8,
+"peak": 0.21,
+"onset": 0.15,
+"peak_db": -12.3
+},
+{
+"name": "game-start",
+"dur": 1.44,
+"peak": 0.61,
+"onset": 0.6,
+"peak_db": -17.8
+},
+{
+"name": "game-ui",
+"dur": 6.26,
+"peak": 0.57,
+"onset": 0.05,
+"peak_db": -12.6
+},
+{
+"name": "hover",
+"dur": 14.21,
+"peak": 0.17,
+"onset": 0.13,
+"peak_db": -4.7
+},
+{
+"name": "impact-and-subdrop",
+"dur": 16.0,
+"peak": 5.02,
+"onset": 0.0,
+"peak_db": -5.1
+},
+{
+"name": "impact-hit-1",
+"dur": 1.83,
+"peak": 0.07,
+"onset": 0.05,
+"peak_db": -10.3
+},
+{
+"name": "impact-hit-2",
+"dur": 2.53,
+"peak": 0.25,
+"onset": 0.1,
+"peak_db": -14.6
+},
+{
+"name": "impact-hit-3",
+"dur": 1.28,
+"peak": 0.12,
+"onset": 0.05,
+"peak_db": -13.4
+},
+{
+"name": "impact-hit-4",
+"dur": 1.62,
+"peak": 0.25,
+"onset": 0.05,
+"peak_db": -14.6
+},
+{
+"name": "impact-hit-launch",
+"dur": 1.88,
+"peak": 0.25,
+"onset": 0.05,
+"peak_db": -16.4
+},
+{
+"name": "impact-hit",
+"dur": 2.38,
+"peak": 0.04,
+"onset": 0.03,
+"peak_db": -10.6
+},
+{
+"name": "inception-thump",
+"dur": 3.51,
+"peak": 0.62,
+"onset": 0.15,
+"peak_db": -7.6
+},
+{
+"name": "notification-1",
+"dur": 1.96,
+"peak": 0.15,
+"onset": 0.15,
+"peak_db": -22.0
+},
+{
+"name": "pop-sound",
+"dur": 1.36,
+"peak": 0.06,
+"onset": 0.05,
+"peak_db": -17.6
+},
+{
+"name": "riser-1",
+"dur": 4.06,
+"peak": 2.52,
+"onset": 0.96,
+"peak_db": -22.7
+},
+{
+"name": "riser-2",
+"dur": 3.72,
+"peak": 3.38,
+"onset": 2.23,
+"peak_db": -11.4
+},
+{
+"name": "riser-3",
+"dur": 3.24,
+"peak": 2.06,
+"onset": 0.82,
+"peak_db": -23.1
+},
+{
+"name": "short-whoosh-metal",
+"dur": 1.06,
+"peak": 0.39,
+"onset": 0.19,
+"peak_db": -28.0
+},
+{
+"name": "shutter-5dm4",
+"dur": 0.65,
+"peak": 0.19,
+"onset": 0.08,
+"peak_db": -26.1
+},
+{
+"name": "shutter-zenit",
+"dur": 2.81,
+"peak": 0.32,
+"onset": 0.09,
+"peak_db": -29.1
+},
+{
+"name": "simple-whoosh-1",
+"dur": 0.47,
+"peak": 0.11,
+"onset": 0.02,
+"peak_db": -18.2
+},
+{
+"name": "simple-whoosh-2",
+"dur": 0.31,
+"peak": 0.07,
+"onset": 0.0,
+"peak_db": -12.9
+},
+{
+"name": "success",
+"dur": 3.03,
+"peak": 0.45,
+"onset": 0.2,
+"peak_db": -22.6
+},
+{
+"name": "swipe",
+"dur": 0.08,
+"peak": 0.05,
+"onset": 0.03,
+"peak_db": -24.0
+},
+{
+"name": "swish-1",
+"dur": 2.23,
+"peak": 0.8,
+"onset": 0.31,
+"peak_db": -22.8
+},
+{
+"name": "swish-2",
+"dur": 0.6,
+"peak": 0.14,
+"onset": 0.11,
+"peak_db": -10.4
+},
+{
+"name": "swish-3",
+"dur": 1.68,
+"peak": 0.86,
+"onset": 0.27,
+"peak_db": -23.0
+},
+{
+"name": "swish-slicing",
+"dur": 1.15,
+"peak": 0.26,
+"onset": 0.1,
+"peak_db": -31.2
+},
+{
+"name": "swoosh-1",
+"dur": 2.14,
+"peak": 0.95,
+"onset": 0.34,
+"peak_db": -3.0
+},
+{
+"name": "swoosh-3",
+"dur": 2.82,
+"peak": 1.08,
+"onset": 0.42,
+"peak_db": -2.2
+},
+{
+"name": "swoosh-4",
+"dur": 2.66,
+"peak": 1.27,
+"onset": 0.27,
+"peak_db": -1.5
+},
+{
+"name": "swoosh-5",
+"dur": 1.75,
+"peak": 0.29,
+"onset": 0.01,
+"peak_db": -4.9
+},
+{
+"name": "swoosh-crash",
+"dur": 0.86,
+"peak": 0.34,
+"onset": 0.07,
+"peak_db": -18.1
+},
+{
+"name": "swoosh-fast-1",
+"dur": 0.68,
+"peak": 0.33,
+"onset": 0.17,
+"peak_db": -26.8
+},
+{
+"name": "swoosh-fast-with-thud",
+"dur": 0.65,
+"peak": 0.2,
+"onset": 0.13,
+"peak_db": -7.6
+},
+{
+"name": "swoosh-quick-low",
+"dur": 0.78,
+"peak": 0.26,
+"onset": 0.14,
+"peak_db": -12.9
+},
+{
+"name": "swoosh-sharp-hit-2",
+"dur": 0.82,
+"peak": 0.37,
+"onset": 0.2,
+"peak_db": -25.0
+},
+{
+"name": "swoosh-sharp-hit",
+"dur": 1.28,
+"peak": 0.36,
+"onset": 0.2,
+"peak_db": -24.1
+},
+{
+"name": "swoosh",
+"dur": 1.33,
+"peak": 0.47,
+"onset": 0.12,
+"peak_db": -23.1
+},
+{
+"name": "swoosh2",
+"dur": 1.62,
+"peak": 0.52,
+"onset": 0.02,
+"peak_db": -2.1
+},
+{
+"name": "tremolo-riser-big-hit",
+"dur": 5.45,
+"peak": 1.26,
+"onset": 0.89,
+"peak_db": -9.9
+},
+{
+"name": "ui-back-sound",
+"dur": 0.74,
+"peak": 0.43,
+"onset": 0.34,
+"peak_db": -22.5
+},
+{
+"name": "ui-sound-3",
+"dur": 3.11,
+"peak": 0.31,
+"onset": 0.19,
+"peak_db": -17.1
+},
+{
+"name": "ui-sound-4",
+"dur": 0.68,
+"peak": 0.3,
+"onset": 0.14,
+"peak_db": -7.6
+},
+{
+"name": "ui-sound-6",
+"dur": 0.89,
+"peak": 0.09,
+"onset": 0.06,
+"peak_db": -6.6
+},
+{
+"name": "ui-sound-7",
+"dur": 2.04,
+"peak": 0.11,
+"onset": 0.02,
+"peak_db": -10.0
+},
+{
+"name": "ui-sound-8",
+"dur": 1.18,
+"peak": 0.34,
+"onset": 0.11,
+"peak_db": -10.0
+},
+{
+"name": "ui-sound-off",
+"dur": 3.34,
+"peak": 0.32,
+"onset": 0.18,
+"peak_db": -24.3
+},
+{
+"name": "ui-sound",
+"dur": 3.24,
+"peak": 0.43,
+"onset": 0.31,
+"peak_db": -22.3
+},
+{
+"name": "vintage-flash-long",
+"dur": 36.94,
+"peak": 17.05,
+"onset": 2.0,
+"peak_db": -24.0
+},
+{
+"name": "vintage-flash",
+"dur": 2.8,
+"peak": 0.64,
+"onset": 0.58,
+"peak_db": -9.9
+},
+{
+"name": "whoosh-achievement",
+"dur": 2.12,
+"peak": 0.45,
+"onset": 0.05,
+"peak_db": -15.3
+},
+{
+"name": "whoosh-coarse-harsh",
+"dur": 0.44,
+"peak": 0.14,
+"onset": 0.08,
+"peak_db": -20.8
+}
+]
