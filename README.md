@@ -64,6 +64,24 @@ Pour lancer un projet à la main :
 
 Ta charte (couleurs, courbes d'animation) se règle dans `moteur/src/theme.ts`.
 
+## Option : HyperFrames, un second moteur
+
+Selon le client ou le projet, tu peux avoir besoin d'autre chose qu'un face cam : un film de
+motion design pur, une vidéo fabriquée à partir d'un site web, un explainer sans visage.
+[HyperFrames](https://github.com/heygen-com/hyperframes) (HeyGen, Apache-2.0) fait ça en HTML
+et GSAP, et Claude Code sait l'écrire. Pour l'ajouter :
+
+```sh
+~/kit-montage/installer.sh --hyperframes
+```
+
+Le script installe les skills officielles de HyperFrames dans Claude Code. Tu demandes ensuite
+par exemple « fais une vidéo HyperFrames de 15 s qui présente mon offre ». Il faut Node.js 22.
+
+Quel moteur pour quoi : une personne qui parle à la caméra, c'est le moteur du kit (coupes,
+sous-titres, zooms sur le visage). Une vidéo sans rush, tout en animation, les deux
+conviennent, et HyperFrames a plus de modèles prêts à l'emploi.
+
 ## Pour retoucher à la main
 
 Le kit monte à partir de consignes. Si tu veux aussi une timeline pour retoucher, avec Claude

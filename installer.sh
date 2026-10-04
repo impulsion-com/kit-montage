@@ -1,6 +1,15 @@
 #!/bin/bash
 # Installe le kit montage sur un Mac. Relançable sans risque : chaque étape est sautée si elle est déjà faite.
+#   ./installer.sh                 le kit (moteur Remotion + skill montage-reel)
+#   ./installer.sh --hyperframes   le kit, plus les skills officielles HyperFrames (second moteur, HTML + GSAP)
 set -euo pipefail
+WITH_HYPERFRAMES=0
+for arg in "$@"; do
+  case "$arg" in
+    --hyperframes) WITH_HYPERFRAMES=1 ;;
+    *) echo "option inconnue : $arg" >&2; exit 1 ;;
+  esac
+done
 KIT="$(cd "$(dirname "$0")" && pwd)"
 say() { printf '\n\033[1m%s\033[0m\n' "$1"; }
 fail() { printf '\n\033[31m%s\033[0m\n' "$1" >&2; exit 1; }
@@ -56,6 +65,13 @@ for skill in "$KIT"/skills/*/; do
     echo "skill $name → $target"
   fi
 done
+
+if [ "$WITH_HYPERFRAMES" = 1 ]; then
+  say "Option : HyperFrames"
+  [ "$NODE_MAJOR" -ge 22 ] || fail "HyperFrames demande Node.js 22 ou plus récent (brew upgrade node)."
+  # Installe le jeu de skills de base depuis le dépôt officiel heygen-com/hyperframes (Apache-2.0).
+  (cd "$HOME" && npx --yes hyperframes skills update)
+fi
 
 say "Vérification"
 "$KIT/montage" --verifier

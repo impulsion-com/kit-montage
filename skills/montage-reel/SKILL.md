@@ -19,6 +19,12 @@ Dans la suite, `montage` désigne ce chemin. Le moteur est dans `moteur/` du mê
 Lire `reference/regles-montage.md` (timing, cartes, zoom, illustrations, son, vérification)
 avant tout montage, puis `reference/grammaire-hook.md` pour la structure d'un hook.
 
+**Quand ne pas utiliser ce moteur.** Il est fait pour un rush où quelqu'un parle à la caméra.
+Pour une vidéo sans rush (film de motion design, explainer, vidéo tirée d'un site web), regarder
+si les skills HyperFrames sont installées (`/hyperframes`) : elles couvrent ces cas. Sinon,
+proposer `installer.sh --hyperframes` à la racine du kit. Une vidéo rendue par l'un ou l'autre
+moteur peut ensuite être importée dans OpenCut Impulsion pour être assemblée sur une timeline.
+
 ## Démarrer un projet
 
 Un dossier par vidéo, hors du kit, avec un `build.py` :
