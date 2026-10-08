@@ -43,6 +43,18 @@ export const GraphicSchema = z.object({
   props: z.any().default({}),
 });
 
+// Mise en page « vidéo + carte » : la vidéo passe en moitié d'écran (split) ou en vignette (pip)
+// pendant qu'un habillage occupe la place libérée. Temps de sortie en ms.
+export const LayoutSchema = z.object({
+  mode: z.enum(["split", "pip"]),
+  startMs: z.number(),
+  endMs: z.number(),
+  side: z.enum(["left", "right", "top", "bottom"]).default("right"),                              // split : où va la vidéo
+  ratio: z.number().default(0.5),                                                                 // split : part de l'écran laissée à la vidéo
+  corner: z.enum(["top-left", "top-right", "bottom-left", "bottom-right"]).default("bottom-right"), // pip
+  size: z.number().default(0.26),                                                                 // pip : largeur, fraction
+});
+
 export const SfxSchema = z.object({ src: z.string(), atMs: z.number(), gain: z.number() }); // gain linéaire
 
 export const ReelPropsSchema = z.object({
@@ -61,6 +73,7 @@ export const ReelPropsSchema = z.object({
   faces: z.array(FaceSchema).default([]),
   overlays: z.array(OverlaySchema).default([]),
   graphics: z.array(GraphicSchema).default([]),
+  layouts: z.array(LayoutSchema).default([]),
   sfx: z.array(SfxSchema).default([]),
   music: z.object({ src: z.string(), gain: z.number(), duckGain: z.number() }).nullable().default(null),
   speech: z.array(z.tuple([z.number(), z.number()])).default([]),  // plages de parole (ms) pour le ducking

@@ -72,6 +72,19 @@ Les valeurs chiffrées sont celles implémentées dans `moteur/plan.py`.
 - Le prompt décrit une plaque de fond : centre calme, pas de texte ni de logo ni de
   personne, profondeur de champ courte. Le b-roll illustre l'idée, il ne la commente pas.
 
+## Vidéo longue : mises en page vidéo + carte
+
+- Au-delà d'une minute, sortir la personne du plein cadre de temps en temps : moitié d'écran
+  (`split`) quand elle déroule une liste ou un programme, vignette (`pip`) quand un plan de coupe
+  ou une capture porte l'information.
+- Une mise en page par idée structurante, jamais décorative : elle dure le temps du passage
+  (5 à 15 s), puis la vidéo revient plein cadre. Pas deux d'affilée sans retour au plein cadre.
+- Rythme des temps forts selon la durée (repère repris du skill talking-head-recut de
+  HyperFrames) : un toutes les 6 à 8 s sous une minute, 8 à 12 s jusqu'à 3 minutes, 12 à 20 s
+  jusqu'à 10 minutes. Plus serré si le propos enchaîne chiffres et listes, plus lâche sur un récit.
+- L'entrée dure 0,6 s, la sortie 0,48 s, courbe de déplacement du thème. Le visage reste au
+  centre de la fenêtre, le zoom du plan continue.
+
 ## Son
 
 - Voix : passe-haut 80 Hz, loudnorm -14 LUFS, limiteur final à -1,5 dBTP après le mix.
