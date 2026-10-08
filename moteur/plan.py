@@ -438,17 +438,38 @@ def run(cfg, mode=None, arg=None):
             return [resolve_times(x, base_after) for x in v]
         return v
 
-    graphics = []
-    for g in cfg.get("graphics") or []:
+    def resolve_span(g, dur=3.0):
         start = (word_time(g["at"], g.get("after", 0)) + g.get("offset", -0.2)) if isinstance(g.get("at"), str) else g.get("start", 0)
         start = max(0.0, start)
         if "until" in g:
             end = word_time(g["until"], start) + g.get("until_offset", 0.0)
         else:
-            end = g.get("end", start + g.get("dur", 3.0))
-        graphics.append(dict(kind=g["kind"], startMs=round(start * 1000), endMs=round(min(end, total) * 1000),
+            end = g.get("end", start + g.get("dur", dur))
+        return start, min(end, total)
+
+    graphics = []
+    for g in cfg.get("graphics") or []:
+        start, end = resolve_span(g)
+        graphics.append(dict(kind=g["kind"], startMs=round(start * 1000), endMs=round(end * 1000),
                              x=g.get("x", 0.5), y=g.get("y", 0.5), scale=g.get("scale", 1.0),
                              props=resolve_times(g.get("props", {}), max(0.0, start - 0.5))))
+
+    # --- mises en page vidéo + carte : la vidéo passe en moitié d'écran (split) ou en vignette (pip)
+    layouts = []
+    for l in cfg.get("layouts") or []:
+        if l.get("mode") not in ("split", "pip"):
+            raise SystemExit(f"mise en page inconnue : {l.get('mode')} (split ou pip)")
+        start, end = resolve_span(l, dur=6.0)
+        if end - start < 1.5:
+            raise SystemExit(f"mise en page trop courte ({end - start:.2f} s à {start:.2f} s) : 1,5 s au moins")
+        if layouts and start * 1000 < layouts[-1]["endMs"]:
+            raise SystemExit(f"deux mises en page se chevauchent à {start:.2f} s : les donner dans l'ordre, sans recouvrement")
+        layouts.append(dict(mode=l["mode"], startMs=round(start * 1000), endMs=round(end * 1000),
+                            side=l.get("side", "right" if landscape else "top"), ratio=l.get("ratio", 0.5 if landscape else 0.52),
+                            corner=l.get("corner", "bottom-right"), size=l.get("size", 0.26 if landscape else 0.36)))
+    for o in overlays:
+        if o["behind"] and any(l["startMs"] < o["endMs"] and o["startMs"] < l["endMs"] for l in layouts):
+            raise SystemExit(f"un fond derrière la personne tombe pendant une mise en page ({o['startMs'] / 1000:.2f} s) : choisir l'un ou l'autre")
 
     # --- sons
     sfx = cfg.get("sfx")
@@ -473,6 +494,9 @@ def run(cfg, mode=None, arg=None):
                 sfx += [sfx_at("cut", g["startMs"]), sfx_at("cut", g["endMs"])]
             else:
                 sfx.append(sfx_at("title" if g["kind"] in ("headline", "cta") else "overlay", g["startMs"] + 200))
+        for l in layouts:   # la vidéo qui se range : un whoosh, sauf si un plan de coupe en pose déjà un
+            if not any(g["kind"] == "shot" and min(abs(g["startMs"] - l["startMs"]), abs(g["endMs"] - l["startMs"])) < 600 for g in graphics):
+                sfx.append(sfx_at("cut", l["startMs"]))
         sfx = [x for x in sfx if x]
     else:
         for t, n, g in sfx:
@@ -501,7 +525,7 @@ def run(cfg, mode=None, arg=None):
                     key=c["key"], line=c["line"], tokens=c["tokens"]) for c in cards],
         title=title_p, cuts=cuts_ms, zoom=[dict(ms=t, scale=z) for t, z in zoom],
         faces=[dict(fromMs=round(off * 1000), toMs=round((off + (b - a)) * 1000), cx=f[0], cy=f[1]) for (a, b, off), f in zip(mapping, faces)],
-        overlays=overlays, graphics=graphics, sfx=[{k: v for k, v in s.items() if k in ("src", "atMs", "gain")} for s in sfx],
+        overlays=overlays, graphics=graphics, layouts=layouts, sfx=[{k: v for k, v in s.items() if k in ("src", "atMs", "gain")} for s in sfx],
         music=music, speech=speech, style=style,
     )
     json.dump(plan, open(pub / "plan.json", "w"), ensure_ascii=False, indent=1)
@@ -516,6 +540,10 @@ def run(cfg, mode=None, arg=None):
         print("Graphismes :")
         for g in graphics:
             print(f"  {g['startMs']/1000:6.2f}-{g['endMs']/1000:6.2f}  {g['kind']}")
+    if layouts:
+        print("Mises en page :")
+        for l in layouts:
+            print(f"  {l['startMs']/1000:6.2f}-{l['endMs']/1000:6.2f}  {l['mode']} ({l['side'] if l['mode'] == 'split' else l['corner']})")
     print("Sons :")
     for s in sfx:
         print(f"  {s['atMs']/1000:6.2f}  {s['src'].split('/')[-1]:<24} gain {s['gain']:.3f}  ({s.get('kind','')} @ {s.get('eventMs',0)/1000:.2f})")

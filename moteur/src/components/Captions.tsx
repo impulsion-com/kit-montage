@@ -1,12 +1,13 @@
 import { AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { theme } from "../theme";
+import { useCaptionAnchor } from "./Layout";
 import type { Card, ReelProps } from "../types";
 
 const msToFrame = (ms: number, fps: number) => Math.round((ms / 1000) * fps);
 
 // Une carte : un groupe de 1 à 3 mots. Entrée à ressort (échelle + montée + flou), les mots
 // s'allument un à un au fil de la voix (karaoké), le mot-clé est en accent et plus grand.
-const CardView: React.FC<{ card: Card; p: ReelProps; y: number; size: number }> = ({ card, p, y, size }) => {
+const CardView: React.FC<{ card: Card; p: ReelProps; y: number; size: number; dx: number }> = ({ card, p, y, size, dx }) => {
   const frame = useCurrentFrame();
   const { fps, width } = useVideoConfig();
   const ms = card.startMs + (frame / fps) * 1000;
@@ -30,7 +31,7 @@ const CardView: React.FC<{ card: Card; p: ReelProps; y: number; size: number }> 
     <div
       style={{
         position: "absolute",
-        left: 0,
+        left: dx,
         width,
         top: y,
         display: "flex",
@@ -76,8 +77,8 @@ const CardView: React.FC<{ card: Card; p: ReelProps; y: number; size: number }> 
 };
 
 export const Captions: React.FC<{ p: ReelProps }> = ({ p }) => {
-  const { fps, height } = useVideoConfig();
-  const base = height * p.style.subY;
+  const { fps } = useVideoConfig();
+  const { dx, y: base } = useCaptionAnchor(p);
   const lh = p.style.subSize * 1.18;
   return (
     <AbsoluteFill>
@@ -88,7 +89,7 @@ export const Captions: React.FC<{ p: ReelProps }> = ({ p }) => {
         const y = base + c.line * lh - size * 0.5;
         return (
           <Sequence key={i} from={from} durationInFrames={dur} layout="none">
-            <CardView card={c} p={p} y={y} size={size} />
+            <CardView card={c} p={p} y={y} size={size} dx={dx} />
           </Sequence>
         );
       })}

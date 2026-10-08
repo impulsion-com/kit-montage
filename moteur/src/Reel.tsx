@@ -7,6 +7,7 @@ import { Overlays } from "./components/Overlays";
 import { SoundDesign } from "./components/SoundDesign";
 import { Grade } from "./components/Grade";
 import { Graphics } from "./components/Graphics";
+import { LayoutBackdrop, LayoutWindow } from "./components/Layout";
 import type { ReelProps } from "./types";
 
 // Polices locales (public/fonts). Le nom de famille est celui utilisé dans style.font.
@@ -21,14 +22,17 @@ loadFont({ family: "Figtree", url: staticFile("fonts/Figtree-ExtraBold.ttf"), we
 loadFont({ family: "Figtree", url: staticFile("fonts/Figtree-ExtraBold.ttf"), weight: "900" });
 
 // Pile des couches, du fond vers l'avant : plan → illustrations d'ambiance (+ personne) →
-// étalonnage → illustrations devant → sous-titres → pastille titre. Son : voix du clip + SFX + musique.
+// étalonnage → fond de mise en page → illustrations devant → habillages → vidéo en fenêtre →
+// sous-titres → pastille titre. Son : voix du clip + SFX + musique.
 export const Reel: React.FC<ReelProps> = (p) => (
   <AbsoluteFill style={{ backgroundColor: "#000" }}>
     <Footage p={p} />
     <Overlays p={p} layer="behind" />
     {p.style.grade ? <Grade light={p.style.look === "organic"} /> : null}
+    <LayoutBackdrop p={p} />
     <Overlays p={p} layer="front" />
     <Graphics p={p} />
+    <LayoutWindow p={p} />
     <Captions p={p} />
     <TitlePill p={p} />
     <SoundDesign p={p} />

@@ -109,6 +109,29 @@ de son composant dans `moteur/src/components/Graphics.tsx`. `moteur/shotcraft/` 
 animations Remotion à adapter : en copier une dans `moteur/src/shots/index.tsx` (textes en
 props, couleurs du thème) et l'inscrire dans `SHOTS`.
 
+### Vidéo + carte : la personne quitte le plein cadre
+
+Sur une vidéo longue, la personne plein cadre du début à la fin lasse. `layouts` range la vidéo
+dans une fenêtre pendant un passage et laisse la place à un habillage :
+
+```python
+layouts=[
+    dict(mode="split", at="Nous commencerons", until="Ensuite", side="right"),   # vidéo à droite, panneau à gauche
+    dict(mode="pip", at="Tout", after=39, until="retrouverez"),                  # vidéo en vignette sur un plan de coupe
+],
+```
+
+| `mode` | Ce que ça fait | Réglages |
+| --- | --- | --- |
+| `split` | La vidéo occupe une moitié de l'écran, recadrée sur le visage | `side` : `left`, `right` (16:9), `top`, `bottom` (9:16) ; `ratio` : part laissée à la vidéo (0,5) |
+| `pip` | La vidéo devient une vignette dans un coin, le reste de l'écran est libre | `corner` : `bottom-right` par défaut ; `size` : largeur (0,26) |
+
+Les temps s'écrivent comme pour `graphics` (`at`, `until`, `offset`, `after`, ou `start` et `end`).
+Une mise en page ne montre rien toute seule : poser dans la place libérée un habillage de
+`graphics` sur la même plage (panneau du côté opposé à `side`, ou plan de coupe `shot` sous une
+vignette). Les sous-titres suivent la fenêtre. Pas de `broll` pendant une mise en page, et pas
+deux mises en page qui se recouvrent : le moteur refuse.
+
 Les couleurs, courbes et ressorts vivent dans `moteur/src/theme.ts` : c'est là qu'on met la
 charte de la personne, jamais en dur dans un composant.
 

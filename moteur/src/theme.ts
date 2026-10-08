@@ -14,6 +14,7 @@ export const theme = {
     amber: "#E8B768",           // accent motion design (NullMotion), accordé à la lampe du décor
     silver: "#F4F4F6",
   },
+  stage: "radial-gradient(ellipse at 50% 45%, #1A1712 0%, #0B0B0D 62%, #060607 100%)",   // fond des mises en page vidéo + carte
   glass: {
     fill: "linear-gradient(180deg, rgba(38,38,43,0.80) 0%, rgba(16,16,19,0.84) 58%, rgba(8,8,10,0.88) 100%)",
     border: "1px solid rgba(255,255,255,0.16)",

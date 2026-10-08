@@ -62,6 +62,10 @@ Pour lancer un projet à la main :
 | `skills/montage-reel/` | La skill Claude Code : la méthode et les règles de montage. |
 | `exemples/` | Deux configurations complètes, réel 9:16 et vidéo 16:9 avec motion design. |
 
+Sur une vidéo longue, la personne peut quitter le plein cadre : moitié d'écran avec un panneau
+à côté, ou vignette dans un coin pendant un plan de coupe. Demande-le en parlant : « mets-moi en
+moitié d'écran pendant que je déroule le programme ».
+
 Ta charte (couleurs, courbes d'animation) se règle dans `moteur/src/theme.ts`.
 
 ## Option : HyperFrames, un second moteur

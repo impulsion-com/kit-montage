@@ -17,6 +17,11 @@ CONFIG = dict(
               "posez des questions", "bonne formation"],
     hide_captions=[(2.6, 6.1), (8.7, 13.3), (50.7, 53.9)],   # nom incrusté, puis plans de coupe qui disent déjà le texte
     style=dict(subY=0.83),
+    # la vidéo se range à droite pendant le programme, puis passe en vignette sur un plan de coupe
+    layouts=[
+        dict(mode="split", at="Nous commencerons", offset=-0.1, until="Ensuite", until_offset=-0.2, side="right"),
+        dict(mode="pip", at="Tout", after=39, offset=-0.3, until="retrouverez"),
+    ],
     graphics=[
         dict(kind="headline", at="bienvenue", offset=0.1, dur=4.6, x=L, y=0.42, scale=1.15, props=dict(
             align="left", eyebrow="FORMATION", lead="Devenir", pill="Media Buyer",
